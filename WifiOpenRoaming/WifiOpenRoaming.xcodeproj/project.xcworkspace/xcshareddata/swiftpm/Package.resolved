@@ -1,0 +1,15 @@
+{
+  "originHash" : "09778e97bc55c91cb73a4b6e3cd23b05c84732549849dd680e1cc18dcab7436f",
+  "pins" : [
+    {
+      "identity" : "dnaspacessdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/CiscoDevNet/DNASpacesSDK-IOS",
+      "state" : {
+        "revision" : "49c176976028bf82d786d0e0443b4addc3696b71",
+        "version" : "1.1.10"
+      }
+    }
+  ],
+  "version" : 3
+}

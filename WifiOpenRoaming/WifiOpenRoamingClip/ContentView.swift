@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  OpenRoaming
+//  WifiOpenRoamingClip
 //
 //  Created by Daniel García Villaverde on 6/11/24.
 //
