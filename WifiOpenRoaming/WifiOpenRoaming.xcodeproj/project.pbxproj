@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BC5CCE322CDBAC2E00B0CC26 /* OpenRoaming in Frameworks */ = {isa = PBXBuildFile; productRef = BC5CCE312CDBAC2E00B0CC26 /* OpenRoaming */; };
 		BC5CCE602CDBAC9A00B0CC26 /* WifiOpenRoamingClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = BC5CCE512CDBAC9800B0CC26 /* WifiOpenRoamingClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BCD8BBC32CDC9AE700834AC4 /* OpenRoaming in Frameworks */ = {isa = PBXBuildFile; productRef = BCD8BBC22CDC9AE700834AC4 /* OpenRoaming */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,11 +49,32 @@
 			);
 			target = BC5CCE502CDBAC9800B0CC26 /* WifiOpenRoamingClip */;
 		};
+		BCD8BBB52CDC9AB700834AC4 /* Exceptions for "WifiOpenRoaming" folder in "WifiOpenRoamingClip" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Design/WifiButtonStyle.swift,
+				Design/WifiCheckboxStyle.swift,
+				Design/WifiHeader.swift,
+				Design/WifiInformationCell.swift,
+				Design/WifiLoadingView.swift,
+				LoadExperienceView.swift,
+				Wifi/WifiErrorView.swift,
+				Wifi/WifiInformationViewModel.swift,
+				Wifi/WifiMainView.swift,
+				Wifi/WifiNoProfileInstalled.swift,
+				Wifi/WifiProfileInstalled.swift,
+				Wifi/WifiSDKViewModel.swift,
+			);
+			target = BC5CCE502CDBAC9800B0CC26 /* WifiOpenRoamingClip */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		BC5CCE212CDBAC1600B0CC26 /* WifiOpenRoaming */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BCD8BBB52CDC9AB700834AC4 /* Exceptions for "WifiOpenRoaming" folder in "WifiOpenRoamingClip" target */,
+			);
 			path = WifiOpenRoaming;
 			sourceTree = "<group>";
 		};
@@ -79,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCD8BBC32CDC9AE700834AC4 /* OpenRoaming in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +113,7 @@
 			children = (
 				BC5CCE212CDBAC1600B0CC26 /* WifiOpenRoaming */,
 				BC5CCE522CDBAC9800B0CC26 /* WifiOpenRoamingClip */,
+				BCD8BBC12CDC9AE700834AC4 /* Frameworks */,
 				BC5CCE202CDBAC1600B0CC26 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,6 +125,13 @@
 				BC5CCE512CDBAC9800B0CC26 /* WifiOpenRoamingClip.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BCD8BBC12CDC9AE700834AC4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +179,7 @@
 			);
 			name = WifiOpenRoamingClip;
 			packageProductDependencies = (
+				BCD8BBC22CDC9AE700834AC4 /* OpenRoaming */,
 			);
 			productName = WifiOpenRoamingClip;
 			productReference = BC5CCE512CDBAC9800B0CC26 /* WifiOpenRoamingClip.app */;
@@ -374,6 +406,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -406,6 +439,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -440,6 +474,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -474,6 +509,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -533,6 +569,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		BC5CCE312CDBAC2E00B0CC26 /* OpenRoaming */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC5CCE302CDBAC2E00B0CC26 /* XCRemoteSwiftPackageReference "DNASpacesSDK-IOS" */;
+			productName = OpenRoaming;
+		};
+		BCD8BBC22CDC9AE700834AC4 /* OpenRoaming */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BC5CCE302CDBAC2E00B0CC26 /* XCRemoteSwiftPackageReference "DNASpacesSDK-IOS" */;
 			productName = OpenRoaming;
