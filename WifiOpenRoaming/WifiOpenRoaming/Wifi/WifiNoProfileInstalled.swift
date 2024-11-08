@@ -3,36 +3,41 @@
 import SwiftUI
 
 struct WifiNoProfileInstalled: View {
-
     @State private var terms: Bool = false
-    private let model: WifiInformationProtocol = WifiInformationViewModel()
+    @State private var showAlert: Bool = false
+
+    private let model = WifiInformationViewModel()
     @ObservedObject var viewModel: WifiSDKViewModel
 
     var body: some View {
         VStack(alignment: .leading) {
+            model.image.centerCropped()
+
             WifiHeader(headerTitleText: model.headerTitleText,
                        headerSubtitleText: model.headerSubtitleText)
-            .padding(20)
-
-            ForEach(model.information, id: \.headerTitleText) { section in
-                WifiInformationCell(info: .init(headerTitleText: section.headerTitleText,
-                                                headerSubtitleText: section.headerSubtitleText,
-                                                image: section.image))
-            }
-            .padding([.leading, .trailing], 16)
-
+            .padding([.leading, .trailing], 34)
+            .padding([.top], 32)
             Toggle(model.termsAndConditionsText,
                    isOn: $terms)
             .toggleStyle(WifiCheckboxStyle())
-            .font(.system(size: 12))
-            .padding([.leading, .trailing], 16)
+            .font(.helvetica(size: 11))
+            .padding([.top], 32)
+            .padding([.leading, .trailing], 34)
 
         }
         Button(model.saveProfileButtonText) {
-            viewModel.installProfile(id: "1234")
+            if terms {
+                viewModel.installProfile(id: UIDevice.current.identifierForVendor?.uuidString ?? NSDate().timeIntervalSince1970.description)
+            } else {
+                showAlert = true
+            }
         }
-            .buttonStyle(.wifi)
-            .padding([.top, .bottom], 40)
-        Spacer()
+        .alert("Debes aceptar las Condiciones de Uso y Privacidad", isPresented: $showAlert) {
+            Button("Ok", role: .cancel) {}
+        }
+        .buttonStyle(.wifi)
+        .padding([.top], 40)
+        .padding([.bottom], 20)
+        .padding([.leading, .trailing], 34)
     }
 }

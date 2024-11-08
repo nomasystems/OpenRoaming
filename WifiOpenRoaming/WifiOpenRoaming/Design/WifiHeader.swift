@@ -9,16 +9,16 @@ struct WifiHeader: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(headerTitleText)
-                .font(.title2)
-                .padding([.bottom], 8)
+                .font(.helvetica(size: 18))
+                .padding([.bottom], 24)
                 .textCase(.uppercase)
             Text(headerSubtitleText)
-                .font(.system(size: 12))
+                .font(.helvetica())
         }
     }
 }
 
 #Preview {
     WifiHeader(headerTitleText: "Accede a nuestra Red Wi-fi",
-               headerSubtitleText: "Añade la Wi-Fi de Zara a tu dispositivo para conectarte de forma directa cuando visites alguna de nuestras tiendas, dispondrás de acceso durante los próximos 7 dias, hazlo permanente instalando nuestra APP.")
+               headerSubtitleText: "Conéctate a la wi-fi de nuestras tiendas durante los próximos 7 dias. Descárgate la app para hacerlo permanente.")
 }

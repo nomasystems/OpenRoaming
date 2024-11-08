@@ -9,21 +9,19 @@ class WifiSDKViewModel: ObservableObject {
     enum State {
         case idle
         case loading
+        case splash
         case installedProfile
         case missingProfile
-        case failed(error: String)
     }
 
     @Published private(set) var state = State.idle
+    @Published var showError = false
 
     func load() {
-        state = .loading
-        //        Move to cyber ark
-        let appId = "com.inditex.zara.iphone"
-        var dnaSpacesKey = "ff0cc05b-7488-443a-b114-1357529a42c7"
-#if APPCLIP
-        dnaSpacesKey = "ff0cc05b-7488-443a-b114-1357529a42c7"
-#endif
+        state = .splash
+        let appId = "com.inditex.openroaming"
+        let dnaSpacesKey = "e9d380f8-bbad-432d-9f68-d9d5dfc71d70"
+
         if !OpenRoaming.isSdkRegistered() {
             OpenRoaming.registerSdk(appId: appId,
                                     dnaSpacesKey: dnaSpacesKey,
@@ -31,7 +29,7 @@ class WifiSDKViewModel: ObservableObject {
                                     registerSdkHandler: { [weak self] _, error  in
                 self?.checkProfile()
                 if error != nil {
-                    self?.state = .failed(error: "Register SDK Fail")
+                    self?.showError = true
                 }
             })
         } else {
@@ -50,11 +48,13 @@ class WifiSDKViewModel: ObservableObject {
                         self?.state = .installedProfile
                         self?.checkProfile()
                     } else {
-                        self?.state = .failed(error: "Install Profile fail")
+                        self?.showError = true
                     }
                 })
             } else {
-                self?.state = .failed(error: "Associate user fail")
+                DispatchQueue.main.async { [weak self] in
+                    self?.showError = true
+                }
             }
         })
     }
@@ -62,7 +62,7 @@ class WifiSDKViewModel: ObservableObject {
     func deleteProfile(id: String) {
         OpenRoaming.deleteUser { error in
             if error != nil {
-                self.state = .failed(error: "Delete Profile fail")
+                self.showError = true
             } else {
                 self.state = .missingProfile
             }
@@ -70,9 +70,13 @@ class WifiSDKViewModel: ObservableObject {
     }
 
     func checkProfile() {
-        state = .loading
-        OpenRoaming.profileExistence { [weak self] isProfileInstalled, _ in
-            self?.state = isProfileInstalled == true ? .installedProfile : .missingProfile
+        DispatchQueue.main.async { [weak self] in
+            self?.state = .loading
+            OpenRoaming.profileExistence { [weak self] isProfileInstalled, _ in
+                DispatchQueue.main.async { [weak self] in
+                    self?.state = isProfileInstalled == true ? .installedProfile : .missingProfile
+                }
+            }
         }
     }
 

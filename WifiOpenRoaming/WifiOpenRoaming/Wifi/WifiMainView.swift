@@ -9,16 +9,30 @@ struct WifiMainView: View {
     var body: some View {
         VStack {
             switch viewModel.state {
-            case .idle: WifiLoaderView()
+            case .idle: SplashScreenView()
+            case .splash: SplashScreenView()
             case .loading: WifiLoaderView()
             case .installedProfile: WifiProfileInstalled(viewModel: viewModel)
             case .missingProfile: WifiNoProfileInstalled(viewModel: viewModel)
-            case .failed: WifiErrorView(viewModel: viewModel)
             }
         }.onAppear(perform: {
             viewModel.load()
         })
-        .padding()
+        .alert("Se ha producido un error inesperado", isPresented: $viewModel.showError) {
+            Button("Ok", role: .cancel) { viewModel.load() }
+        }
+        .edgesIgnoringSafeArea(.top)
+    }
+}
+
+struct SplashScreenView: View {
+    var body: some View {
+        Spacer()
+        Image("splash")
+            .font(.largeTitle)
+            .foregroundColor(.white)
+            .symbolEffect( .pulse, isActive: true )
+        Spacer()
     }
 }
 

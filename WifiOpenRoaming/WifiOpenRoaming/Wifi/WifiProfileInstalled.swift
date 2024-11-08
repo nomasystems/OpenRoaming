@@ -6,47 +6,37 @@ import OpenRoaming
 struct WifiProfileInstalled: View {
 
     @ObservedObject var viewModel: WifiSDKViewModel
+    private let model = WifiInstalledInformationViewModel()
 
     var body: some View {
-        GeometryReader { geometry in
-            VStack(alignment: .leading) {
-                HStack {
-                    Image(systemName: "checkmark.circle.fill")
-                        .resizable()
-                        .frame(width: 48, height: 48, alignment: .leading)
-                        .foregroundStyle(.black)
-                        .padding([.top, .leading], 20)
-                    Spacer()
-                }
-                Text("Red WI-fi añadida para los próximos 7 dias")
-                    .font(.title2)
+        VStack(alignment: .center) {
+            model.image.centerCropped()
+            VStack {
+                Image(systemName: "checkmark.circle.fill")
+                    .resizable()
+                    .frame(width: 48, height: 48, alignment: .center)
+                    .foregroundStyle(.primary)
+                    .padding([.top], 30)
+
+                Text(model.headerTitleText)
+                    .font(.helvetica(size: 18))
+                    .padding([.top], 28)
                     .textCase(.uppercase)
-                    .padding([.top], 32)
-                    .padding([.leading], 20)
-                Text("Instálate la App de Zara y disfruta de manera permanente de conexión Wi-Fi de tu dispositivo.")
-                    .padding([.top, .leading], 20)
-                    .font(.system(size: 12))
-
-                Spacer()
-
-                Button("Descargar la app") {
-//                    let appUrl = URL(string: url) ?? IZSharingLinks.urlForApp()
-//                    UIApplication.shared.open(appUrl)
-                    if let url = URL(string: "itms-apps://itunes.apple.com/app/547951480") {
+                Text(model.headerSubtitleText)
+                    .font(.helvetica())
+                    .padding([.top], 24)
+                Button(model.downloadButtonText) {
+                    if let url = URL(string: model.downloadUrl) {
                         UIApplication.shared.open(url)
                     }
                 }
-                .frame(maxWidth: .infinity, maxHeight: 32)
-                .buttonStyle(.plain)
-                .background(
-                    Rectangle()
-                        .stroke(.black, lineWidth: 0.5)
-                )
-                .font(.system(size: 16))
-
+                .buttonStyle(.wifi)
+                .padding([.top], 40)
+                .padding([.bottom], 20)
+                .padding([.leading, .trailing], 34)
             }
-
         }
+        .edgesIgnoringSafeArea(.top)
     }
 }
 

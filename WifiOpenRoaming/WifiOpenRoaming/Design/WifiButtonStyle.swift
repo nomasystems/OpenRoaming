@@ -6,12 +6,14 @@ struct WifiButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .textCase(.uppercase)
-            .font(.system(size: 12))
+            .font(.helvetica(size: 11))
             .padding(16)
-            .foregroundStyle(.black)
+            .foregroundStyle(.primary)
+            .frame(maxWidth: .infinity)
+            .frame(maxHeight: 29)
             .background(
                 Rectangle()
-                    .stroke(.black, lineWidth: 0.5)
+                    .stroke(.primary, lineWidth: 0.5)
             )
     }
 }
@@ -25,5 +27,4 @@ extension ButtonStyle where Self == WifiButtonStyle {
 #Preview {
     Button("Preview Button") {}
         .buttonStyle(.wifi)
-
 }

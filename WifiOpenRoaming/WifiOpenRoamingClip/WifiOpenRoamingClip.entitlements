@@ -11,7 +11,7 @@
 	<true/>
 	<key>com.apple.developer.parent-application-identifiers</key>
 	<array>
-		<string>$(AppIdentifierPrefix)test.open.roaming.com.WifiOpenRoaming</string>
+		<string>$(AppIdentifierPrefix)com.inditex.openroaming</string>
 	</array>
 </dict>
 </plist>

@@ -54,11 +54,11 @@
 			membershipExceptions = (
 				Design/WifiButtonStyle.swift,
 				Design/WifiCheckboxStyle.swift,
+				Design/WifiFontStyle.swift,
 				Design/WifiHeader.swift,
-				Design/WifiInformationCell.swift,
+				Design/WifiImageStyle.swift,
 				Design/WifiLoadingView.swift,
 				LoadExperienceView.swift,
-				Wifi/WifiErrorView.swift,
 				Wifi/WifiInformationViewModel.swift,
 				Wifi/WifiMainView.swift,
 				Wifi/WifiNoProfileInstalled.swift,
@@ -412,7 +412,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = test.open.roaming.com.WifiOpenRoaming;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inditex.openroaming;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -445,7 +445,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = test.open.roaming.com.WifiOpenRoaming;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inditex.openroaming;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -480,7 +480,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = test.open.roaming.com.WifiOpenRoaming.Clip;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inditex.openroaming.Clip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -515,7 +515,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = test.open.roaming.com.WifiOpenRoaming.Clip;
+				PRODUCT_BUNDLE_IDENTIFIER = com.inditex.openroaming.Clip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

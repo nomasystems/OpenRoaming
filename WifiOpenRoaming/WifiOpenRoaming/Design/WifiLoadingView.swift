@@ -7,7 +7,7 @@ struct WifiLoaderView: View {
     var body: some View {
         ProgressView()
             .scaleEffect(1, anchor: .center)
-            .progressViewStyle(CircularProgressViewStyle(tint: .black))
+            .progressViewStyle(CircularProgressViewStyle(tint: .primary))
     }
 }
 
