@@ -28,7 +28,7 @@ struct LoadExperienceView: View {
               let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return }
         var path = components.path
         path.removeFirst()
-        clipExperience = ClipExperience(rawValue: path) ?? .unknown
+        clipExperience = ClipExperience(rawValue: path) ?? .wifi
     }
 }
 
