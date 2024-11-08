@@ -9,8 +9,7 @@ struct WifiMainView: View {
     var body: some View {
         VStack {
             switch viewModel.state {
-            case .idle: SplashScreenView()
-            case .splash: SplashScreenView()
+            case .idle: WifiLoaderView()
             case .loading: WifiLoaderView()
             case .installedProfile: WifiProfileInstalled(viewModel: viewModel)
             case .missingProfile: WifiNoProfileInstalled(viewModel: viewModel)
@@ -22,17 +21,6 @@ struct WifiMainView: View {
             Button("Ok", role: .cancel) { viewModel.load() }
         }
         .edgesIgnoringSafeArea(.top)
-    }
-}
-
-struct SplashScreenView: View {
-    var body: some View {
-        Spacer()
-        Image("splash")
-            .font(.largeTitle)
-            .foregroundColor(.white)
-            .symbolEffect( .pulse, isActive: true )
-        Spacer()
     }
 }
 

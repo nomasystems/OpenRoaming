@@ -9,7 +9,6 @@ class WifiSDKViewModel: ObservableObject {
     enum State {
         case idle
         case loading
-        case splash
         case installedProfile
         case missingProfile
     }
@@ -18,7 +17,7 @@ class WifiSDKViewModel: ObservableObject {
     @Published var showError = false
 
     func load() {
-        state = .splash
+        state = .loading
         let appId = "com.inditex.openroaming"
         let dnaSpacesKey = "e9d380f8-bbad-432d-9f68-d9d5dfc71d70"
 
