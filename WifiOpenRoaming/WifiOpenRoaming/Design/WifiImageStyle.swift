@@ -15,6 +15,7 @@ extension Image {
             .scaledToFill()
             .frame(width: geo.size.width, height: geo.size.height)
             .contentShape(Rectangle())
+            .ignoresSafeArea()
         }
     }
 }
