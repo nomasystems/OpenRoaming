@@ -59,6 +59,7 @@
 		BCD8BBB52CDC9AB700834AC4 /* Exceptions for "WifiOpenRoaming" folder in "WifiOpenRoamingClip" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Assets.xcassets,
 				Design/WifiButtonStyle.swift,
 				Design/WifiCheckboxStyle.swift,
 				Design/WifiFontStyle.swift,
