@@ -16,7 +16,7 @@ struct LoadExperienceView: View {
         VStack {
             switch clipExperience {
             case .wifi:
-                WifiMainView()
+                OpenRoamingView()
             case .unknown:
                 ProgressView()
             }

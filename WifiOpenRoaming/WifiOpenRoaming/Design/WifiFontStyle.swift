@@ -7,9 +7,16 @@
 
 import SwiftUICore
 
+enum FontSize: CGFloat {
+    case headerTitle = 20
+    case header2Title = 18
+    case listLabel = 14
+    case standardLabel = 11
+}
+
 extension Font {
 
-    static func helvetica(size: CGFloat = 12) -> Font {
-        return .custom("Helvetica Neue", size: size)
+    static func helvetica(size: FontSize = .standardLabel) -> Font {
+        return .custom("Helvetica Neue", size: size.rawValue)
     }
 }

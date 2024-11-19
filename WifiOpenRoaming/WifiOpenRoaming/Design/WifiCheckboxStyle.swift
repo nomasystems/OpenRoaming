@@ -2,14 +2,18 @@
 
 import SwiftUI
 
+private enum ViewTraits {
+    static let checkBoxSize = CGSize(width: 14, height: 13)
+}
+
 struct WifiCheckboxStyle: ToggleStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         HStack {
             Image(systemName: configuration.isOn ? "checkmark.square" : "square")
                 .resizable()
-                .frame(width: 14, height: 13)
+                .frame(width: ViewTraits.checkBoxSize.width, height: ViewTraits.checkBoxSize.height)
                 .foregroundColor(.primary)
-                .font(.helvetica(size: 11))
+                .font(.helvetica())
                 configuration.label
         }
         .onTapGesture { configuration.isOn.toggle() }

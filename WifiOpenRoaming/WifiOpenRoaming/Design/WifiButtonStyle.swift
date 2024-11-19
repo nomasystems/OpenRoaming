@@ -2,18 +2,23 @@
 
 import SwiftUI
 
+private enum ViewTraits {
+    static let buttonHeight: CGFloat = 29
+    static let lineWidth: CGFloat = 0.5
+}
+
 struct WifiButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .textCase(.uppercase)
-            .font(.helvetica(size: 11))
+            .font(.helvetica())
             .padding(16)
             .foregroundStyle(.primary)
             .frame(maxWidth: .infinity)
-            .frame(maxHeight: 29)
+            .frame(maxHeight: ViewTraits.buttonHeight)
             .background(
                 Rectangle()
-                    .stroke(.primary, lineWidth: 0.5)
+                    .stroke(.primary, lineWidth: ViewTraits.lineWidth)
             )
     }
 }

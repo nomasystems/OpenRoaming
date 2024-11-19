@@ -12,9 +12,9 @@ extension Image {
         GeometryReader { geo in
             self
             .resizable()
-            .scaledToFill()
-            .frame(width: geo.size.width, height: geo.size.height)
-            .contentShape(Rectangle())
+            .aspectRatio(contentMode: .fill)
+            .frame(width: geo.size.width, height: geo.size.height + geo.safeAreaInsets.top)
+            .clipped()
             .ignoresSafeArea()
         }
     }

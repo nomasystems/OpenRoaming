@@ -2,6 +2,10 @@
 
 import SwiftUI
 
+private enum ViewTraits {
+    static let imageSize = CGSize(width: 14, height: 14)
+}
+
 struct WifiHeaderItems: Hashable {
     let name: String
     let image: Image
@@ -16,19 +20,20 @@ struct WifiHeader: View {
     let headerItems: [WifiHeaderItems]
 
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 16) {
             Text(headerTitleText)
-                .font(.helvetica(size: 20))
-                .padding([.bottom], 40)
+                .font(.helvetica(size: .headerTitle))
+                .padding([.bottom], 24)
                 .textCase(.uppercase)
             ForEach(headerItems, id: \.self) { item in
-                HStack {
+                HStack(spacing: 8){
                     item.image
                         .foregroundColor(.primary)
-                        .frame(width: 14, height: 14)
-                    Text("\(item.name)")
-                        .font(.helvetica(size: 14))
-                }.padding([.bottom], 16)
+                        .frame(width: ViewTraits.imageSize.width,
+                               height: ViewTraits.imageSize.height)
+                    Text(item.name)
+                        .font(.helvetica(size: .listLabel))
+                }
 
             }
         }
